@@ -21,9 +21,14 @@ var map = new H.Map(
 document.getElementById('mapContainer'),
 defaultLayers.normal.map,
 {
+	pixelRatio: pixelRatio,
 	zoom: 10,
 	center: { lat: 55.753058, lng: 37.626213 }
 });
+
+var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map)); //UI
+var ui = H.ui.UI.createDefault(map, defaultLayers);
+
 
 moveToPoint(map);
 			
